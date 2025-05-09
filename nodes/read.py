@@ -1,0 +1,11 @@
+import pandas as pd
+
+def read_excel_files(state):
+    fd_path = state.get("fd_path", "datasets/Only_FD_Data 3.xlsx")
+    dt_path = state.get("dt_path", "datasets/Only_DT_Data 3.xlsx")
+    
+    fd_df = pd.read_excel(fd_path)
+    dt_df = pd.read_excel(dt_path)
+
+    print("FD and DT datasets read successfully.")
+    return {"fd_df": fd_df, "dt_df": dt_df}
